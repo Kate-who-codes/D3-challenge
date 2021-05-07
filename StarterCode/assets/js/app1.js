@@ -92,7 +92,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     // .attr("font-size", 5)
     // .attr("class", "stateText");
 
-    chartGroup.selectAll("circle")
+    chartGroup.selectAll("dog")
     .data(healthData)
     .enter()
     .append("text")
@@ -101,6 +101,7 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
     .attr("dy", d => yLinearScale(d.smokes) + circRadius / 2.5)
     .attr("font-size", circRadius)
     .attr("class", "stateText");
+
 
 
 
@@ -118,7 +119,23 @@ d3.csv("assets/data/data.csv").then(function(healthData) {
       .attr("transform", `translate(${width / 2}, ${height + margin.top + 30})`)
       .attr("class", "aText")
       .text("Poverty (%)");
+    
 
+    //   var node = svg.selectAll("g")
+    //             .healthdata(data)
+    //             .enter()
+    //             .append("g");
+
+    // node.append("circle")
+    //     .attr("class", "dot")
+    //     .attr("cx", function(d) { return x(d.x); })
+    //     .attr("cy", function(d) { return y(d.y); })
+    //     .attr("r", 12);
+
+    // node.append("text")
+    //     .attr("x", function(d) { return x(d.x); })
+    //     .attr("y", function(d) { return y(d.y); })
+    //     .text("fooLabelsOfScatterPoints");
 
   }).catch(function(error) {
     console.log(error);
